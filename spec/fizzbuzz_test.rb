@@ -24,9 +24,15 @@ class FizzBuzzTest < Minitest::Test
     fb = Fizzbuzz.new
     assert_equal([1], fb.run(1))
     assert_equal([1, 2], fb.run(2))
-    assert_equal([1,2,3], fb.run(3))
+    assert_equal([1,2, 'fizz'], fb.run(3))
   end
 
+  def test_fizz_buzz_fizzbuzz_return_string
+    fb = Fizzbuzz.new
+    assert_equal('xxx', fb.fizz('xxx'))
+    assert_equal('xxx', fb.buzz('xxx'))
+    assert_equal('xxx', fb.fizzbuzz('xxx'))
+  end
   def test_returns_for_div_by_3_numbers
     fb = Fizzbuzz.new
     assert_equal('fizz', fb.fizz(3))
@@ -56,6 +62,14 @@ class FizzBuzzTest < Minitest::Test
     fb = Fizzbuzz.new
     assert_equal(2, fb.fizzbuzz(2))
   end
+
+  def test_works
+    fb = Fizzbuzz.new
+    assert_equal([1,2,'fizz',4,'buzz'], fb.run(5))
+  end
+
+
+
 
 
 
